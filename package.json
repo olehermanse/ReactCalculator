@@ -1,0 +1,43 @@
+{
+  "name": "web_experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-preset-react": "^6.24.1",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babelify": "^8.0.0",
+    "browserify": "^14.5.0",
+    "express": "^4.16.2",
+    "inline-source": "^5.2.6",
+    "inline-source-cli": "^1.2.0",
+    "mocha": "^4.0.1",
+    "should": "^13.1.3",
+    "uglify": "^0.1.5"
+  },
+  "scripts": {
+    "test": "mocha test -u bdd -R spec",
+    "build:css": "cp ./src/main.css ./build/main.css",
+    "build:js": "browserify -t [ babelify --presets [ react ] ] src/main.jsx | uglifyjs -mc > ./build/main.jsx",
+    "build:inline": "inline-source --compress true --root ./build ./src/main.html > build/index.html",
+    "build:clean": "rm -rf ./build ; mkdir ./build",
+    "prebuild": "npm run build:clean",
+    "build": "npm run build:css && npm run build:js && npm run build:inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/olehermanse/web_experiment.git"
+  },
+  "author": "olehermanse",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/olehermanse/web_experiment/issues"
+  },
+  "homepage": "https://github.com/olehermanse/web_experiment#readme"
+}
