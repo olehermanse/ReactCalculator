@@ -1,4 +1,4 @@
-# Example Calculator App for inlining React and Material-UI code
+# Example Calculator App
 
 An example project to get started using npm build scripts and inline-source with Material-UI.
 Intended to be simple and easy to understand, the calculator itself is not impressive or even useful at all.
