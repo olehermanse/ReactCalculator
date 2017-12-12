@@ -8,7 +8,8 @@
     "build:css": "cp ./src/main.css ./build/main.css",
     "build:js": "browserify -t [ babelify  --presets [ env stage-0 react ] ] src/main.jsx | uglifyjs -mc > build/main.js",
     "build:inline": "inline-source --compress true --root ./build ./src/main.html > build/index.html",
-    "build": "npm run build:js && npm run build:css && npm run build:inline"
+    "build": "npm run build:js && npm run build:css && npm run build:inline",
+    "gh-pages": "npm run build && cp build/index.html ./index.html"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
