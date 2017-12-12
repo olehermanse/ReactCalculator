@@ -69,10 +69,10 @@ export default class StatCalculator extends React.Component {
         <TextField id="number_B" hintText="B"  className="number_B"
         onChange={this.textChange} value={this.state.number_B} style={{width:"1fr"}}
         />
-        <div className="calc_btn">
-        <RaisedButton label="=" onClick={this.onCalc} style={{width:"100%"}}/>
+        <div className="equal_btn">
+        <RaisedButton label="=" onClick={this.onCalc} style={{width:"100%"}} />
         </div>
-        <TextField id="number_C" hintText="Result"  className="number_C"
+        <TextField id="number_C" hintText="Result" className="number_C"
         value={this.state.number_C} style={{width:"1fr"}}
         />
 
